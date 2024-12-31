@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagramme de Classe - Tech Horizons Magazine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .diagram {
+            background-color: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .class {
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            background-color: #ecf0f1;
+            display: inline-block;
+            vertical-align: top;
+            min-width: 200px;
+        }
+        .class-name {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .attributes, .methods {
+            border-top: 1px solid #bdc3c7;
+            padding-top: 5px;
+            margin-top: 5px;
+        }
+        .attribute, .method {
+            margin: 2px 0;
+            color: #34495e;
+        }
+        .relationships {
+            margin-top: 20px;
+            text-align: center;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="diagram">
+        <h1>Diagramme de Classe - Tech Horizons Magazine</h1>
+        
+        <div class="class">
+            <div class="class-name">User</div>
+            <div class="attributes">
+                <div class="attribute">+int id</div>
+                <div class="attribute">+string name</div>
+                <div class="attribute">+string email</div>
+                <div class="attribute">+string password</div>
+                <div class="attribute">+datetime created_at</div>
+                <div class="attribute">+datetime updated_at</div>
+            </div>
+            <div class="methods">
+                <div class="method">+register()</div>
+                <div class="method">+login()</div>
+                <div class="method">+logout()</div>
+            </div>
+        </div>
+
+        <div class="class">
+            <div class="class-name">Guest</div>
+            <div class="methods">
+                <div class="method">+viewPublicIssues()</div>
+                <div class="method">+requestSubscription()</div>
+            </div>
+        </div>
+
+        <div class="class">
+            <div class="class-name">Subscriber</div>
+            <div class="methods">
+                <div class="method">+viewAllIssues()</div>
+                <div class="method">+manageSubscriptions()</div>
+                <div class="method">+browseHistory()</div>
+                <div class="method">+proposeArticle()</div>
+                <div class="method">+rateArticle()</div>
+                <div class="method">+addComment()</div>
+            </div>
+        </div>
+
+        <div class="class">
+            <div class="class-name">ThemeManager</div>
+            <div class="methods">
+                <div class="method">+manageThemeSubscriptions()</div>
+                <div class="method">+manageThemeArticles()</div>
+                <div class="method">+reviewProposedArticles()</div>
+                <div class="method">+viewThemeStatistics()</div>
+                <div class="method">+moderateComments()</div>
+            </div>
+        </div>
+
+        <div class="class">
+            <div class="class-name">Editor</div>
+            <div class="methods">
+                <div class="method">+manageIssues()</div>
+                <div class="method">+manageUsers()</div>
+                <div class="method">+publishIssue()</div>
+                <div class="method">+activateDeactivateContent()</div>
+                <div class="method">+viewGlobalStatistics()</div>
+            </div>
+        </div>
+
+        <div class="class">
+            <div class="class-name">Theme</div>
+            <div class="attributes">
+                <div class="attribute">+int id</div>
+                <div class="attribute">+string name</div>
+                <div class="attribute">+string description</div>
+                <div class="attribute">+datetime created_at</div>
+                <div class="attribute">+datetime updated_at</div>
+            </div>
+        </div>
+
+        <div class="class">
+            <div class="class-name">Article</div>
+            <div class="attributes">
+                <div class="attribute">+int id</div>
+                <div class="attribute">+string title</div>
+                <div class="attribute">+string content</div>
+                <div class="attribute">+string status</div>
+                <div class="attribute">+int theme_id</div>
+                <div class="attribute">+int author_id</div>
+                <div class="attribute">+datetime created_at</div>
+                <div class="attribute">+datetime updated_at</div>
+            </div>
+        </div>
+
+        <div class="class">
+            <div class="class-name">Issue</div>
+            <div class="attributes">
+                <div class="attribute">+int id</div>
+                <div class="attribute">+string title</div>
+                <div class="attribute">+datetime publication_date</div>
+                <div class="attribute">+boolean is_public</div>
+                <div class="attribute">+datetime created_at</div>
+                <div class="attribute">+datetime updated_at</div>
+            </div>
+        </div>
+
+        <div class="class">
+            <div class="class-name">Subscription</div>
+            <div class="attributes">
+                <div class="attribute">+int id</div>
+                <div class="attribute">+int user_id</div>
+                <div class="attribute">+int theme_id</div>
+                <div class="attribute">+datetime start_date</div>
+                <div class="attribute">+datetime end_date</div>
+                <div class="attribute">+datetime created_at</div>
+                <div class="attribute">+datetime updated_at</div>
+            </div>
+        </div>
+
+        <div class="class">
+            <div class="class-name">Comment</div>
+            <div class="attributes">
+                <div class="attribute">+int id</div>
+                <div class="attribute">+int user_id</div>
+                <div class="attribute">+int article_id</div>
+                <div class="attribute">+string content</div>
+                <div class="attribute">+datetime created_at</div>
+                <div class="attribute">+datetime updated_at</div>
+            </div>
+        </div>
+
+        <div class="class">
+            <div class="class-name">Rating</div>
+            <div class="attributes">
+                <div class="attribute">+int id</div>
+                <div class="attribute">+int user_id</div>
+                <div class="attribute">+int article_id</div>
+                <div class="attribute">+int value</div>
+                <div class="attribute">+datetime created_at</div>
+                <div class="attribute">+datetime updated_at</div>
+            </div>
+        </div>
+
+        <div class="relationships">
+            <p>User &lt;|-- Guest, Subscriber, ThemeManager, Editor</p>
+            <p>Subscriber "1" -- "0..*" Subscription</p>
+            <p>Subscription "0..*" -- "1" Theme</p>
+            <p>Theme "1" -- "0..*" Article</p>
+            <p>Article "1" -- "0..*" Comment</p>
+            <p>Article "1" -- "0..*" Rating</p>
+            <p>Issue "1" -- "0..*" Article</p>
+            <p>Subscriber "1" -- "0..*" Article : proposes</p>
+            <p>ThemeManager "1" -- "1" Theme : manages</p>
+            <p>Editor "1" -- "0..*" Issue : manages</p>
+        </div>
+    </div>
+</body>
+</html>
